@@ -1,0 +1,11 @@
+FROM python:3.8.0
+
+RUN mkdir /opt/DevOpsPipe/
+WORKDIR /opt/DevOpsPipe/
+
+COPY requirements.txt .
+COPY dist/web_server /opt/DevOpsPipe/
+
+EXPOSE 80
+
+CMD [ "./web_server" ]
